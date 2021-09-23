@@ -1,8 +1,13 @@
-# Scripts to run
+# Scripts to create and run NEW react application
 `node -v` for checking node
 `npm install --global yarn` for installing yarn globally on your machine
 `npx create-react-app app_name` for creating react application, make sure that you are in right directory
 `yarn start` or `npm run start` for running the website locally
+
+# Scripts to run THIS react application
+`git clone https://github.com/artoryas/react-course.git` - to download the project
+`yarn` - to install dependencies (packages)
+`yarn start` - to run project
 
 # Getting Started with Create React App
 
