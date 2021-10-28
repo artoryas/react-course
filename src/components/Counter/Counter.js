@@ -1,51 +1,28 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import './counter.css';
 
-export default class Counter extends React.Component {
-    state = {
-        count: 0,
-        anotherVar: 'asd'
+export default function Counter() {
+    const [count, setCount] = useState(0);
+
+    function decrement() {
+        setCount(count => count - 1);
     }
 
-    render() {
-        console.log("COUNTER - sI AM RENDERED");
+    function increment() {
+        setCount(count => count + 1);
+    }
 
-        const increment = () => {
-            this.setState((prevState) => ({
-                count: prevState.count + 1
-            }));
+    useEffect(() => {
+        document.title = `Current count is: ${count}`
+    }, [count]);
 
-            // if we want to change value which IS NOT depends on prev state the use object
-            // this.setState({
-            //     count: Math.random(1)
-            // })
-        }
-
-        const decrement = () => {
-            // first way
-            this.setState((prevState) => {
-                return {
-                    count: prevState.count - 1
-                }
-            })
-
-            // second way
-            // this.setState((prevState) => ({
-            //         count: prevState.count - 1
-            //     })
-            // )
-        }
-
-        return (
-            <div className="wrapper">
-                <h1>Current count is {this.state.count}</h1>
-                <button onClick={increment}>
-                    Add +1
-                </button>
-                <button onClick={decrement}>
-                    Remove -1
-                </button>
+    return (
+        <div className="container">
+            <h1>Current count is: {count}</h1>
+            <div className="d-flex">
+                <button className="btn btn-primary" onClick={decrement}>Decrement</button>
+                <button className="btn btn-primary" onClick={increment}>Increment</button>
             </div>
-        )
-    }
+        </div>
+    )
 }

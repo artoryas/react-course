@@ -10,3 +10,8 @@ h1{
 p{
     color: red;
 }
+.box {
+    width: 100px;
+    height: 100px;
+    background: coral;
+}
