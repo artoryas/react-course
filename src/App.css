@@ -1,7 +1,19 @@
-.card{
-    width: 50%;
-    margin: 100px auto;
+nav {
+  background-color: chocolate;
 }
-.active{
-    border: 5px solid red;
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+li {
+  margin: 20px 10px;
+}
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: brown;
 }
