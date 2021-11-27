@@ -1,0 +1,23 @@
+.wrapper {
+    background-color: rgb(84, 130, 230);
+    transition: all .5s ease;
+}
+
+.wrapper.wrapper-dark {
+    background-color: #1f1f1f;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li{
+    color: white;
+    font-weight: bold;
+}
+
+.theme-toggler {
+    font-size: 32px;
+    cursor: pointer;
+}
