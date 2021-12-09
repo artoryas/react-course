@@ -25,3 +25,11 @@ section.dark-theme {
     background: #423F3E;
     color: white;
 }
+
+ul {
+    display: block;
+}
+
+li {
+    list-style-type: disc;
+}

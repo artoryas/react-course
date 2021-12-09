@@ -1,28 +1,19 @@
 import './Nav.css';
-import ThemeContext from '../../contexts/ThemeContext';
-import { useContext, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Nav() {
-    const { theme, setTheme } = useContext(ThemeContext);
-		const isDarkTheme = theme === 'dark';
-		
-		useEffect(() => {
-			console.log('I was re-rendered!');
-		}, []);
-
-		function onToggleTheme() {
-			setTheme(isDarkTheme ? 'light' : 'dark');
-		}
+    const theme = useSelector(store => store);
+    const dispatch = useDispatch();
 
     return (
-        <nav className={ isDarkTheme ? "wrapper wrapper-dark" : "wrapper"}>
+        <nav className={ theme === 'dark' ? "wrapper wrapper-dark" : "wrapper"}>
             <div className="container">
                 <ul>
                     <li>Home</li>
                     <li>Friends</li>
                     <li>Posts</li>
                 </ul>
-                <span className="theme-toggler" onClick={onToggleTheme}>
+                <span className="theme-toggler" onClick={() => dispatch({type: 'toggle'})}>
                     {	theme === 'light' ? '🔦' : '💡' }
                 </span>
             </div>
